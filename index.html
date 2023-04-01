@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | FAQ Accordion Card</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+  <!-- How many team members can I invite?
+  You can invite up to 2 additional users on the Free plan. There is no limit on 
+  team members for the Premium plan.
+
+  What is the maximum file upload size?
+  No more than 2GB. All files in your account must fit your allotted storage space.
+
+  How do I reset my password?
+  Click “Forgot password” from the login page or “Change password” from your profile page.
+  A reset link will be emailed to you.
+
+  Can I cancel my subscription?
+  Yes! Send us a message and we’ll process your request no questions asked.
+
+  Do you provide additional support?
+  Chat and email support is available 24/7. Phone lines are open during normal business hours. -->
+  
+  <main>
+    <div class="faq-container">
+      <img src="./images/illustration-box-desktop.svg" alt="" class="box">
+      <div class="faq-left-section">
+        <span class='mobile-bg-woman'>
+          <img src="./images/illustration-woman-online-mobile.svg" alt="">
+        </span>
+      </div>
+
+      <div class="faq-right-section">
+        <h1>FAQ</h1>
+
+        <ul class="faq-question-lists">
+          <li class="">
+            <p class="question-box">
+              How many team members can i invite?
+              <span>
+                <img src="./images/icon-arrow-down.svg" alt="" class="arrow-down-icon">
+              </span>
+            </p>
+            <p class="answer">
+              You can invite up to 2 additional users on the Free plan. There is no limit on 
+              team members for the Premium plan.
+            </p>
+          </li>
+          <li class="">
+            <p class="question-box">
+              What is the maximum file upload size?
+              <span>
+                <img src="./images/icon-arrow-down.svg" alt="" class="arrow-down-icon">
+              </span>
+            </p>
+            <p class="answer">
+              No more than 2GB. All files in your account must fit your allotted storage space.
+            </p>
+          </li>
+          <li>
+            <p class="question-box">
+              How do I reset my password?
+              <span>
+                <img src="./images/icon-arrow-down.svg" alt="" class="arrow-down-icon">
+              </span>
+            </p>
+            <p class="answer">
+              Click “Forgot password” from the login page or “Change password” from your profile page.
+              A reset link will be emailed to you.
+            </p>
+          </li>
+          <li>
+            <p class="question-box">
+              Can I cancel my subscription?
+              <span>
+                <img src="./images/icon-arrow-down.svg" alt="" class="arrow-down-icon">
+              </span>
+            </p>
+            <p class="answer">
+              Yes! Send us a message and we’ll process your request no questions asked.
+            </p>
+          </li>
+          <li>
+            <p class="question-box">
+              Do you provide additional support?
+              <span>
+                <img  src="./images/icon-arrow-down.svg" alt="" class="arrow-down-icon">
+              </span>
+            </p>
+            <p class="answer">
+              Chat and email support is available 24/7. Phone lines are open during normal business hours.
+            </p>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </main>
+  <script>
+    const liItems = document.querySelectorAll('li')
+    
+    liItems.forEach(item => {
+      const questionBox = item.querySelector('.question-box')
+
+      questionBox.addEventListener('click', handleClick)
+
+      function handleClick(){
+        const parentEl = questionBox.parentNode
+
+        // CLOSING THE current-ANSWER BOX
+        if(parentEl.classList.contains('active')){
+          parentEl.classList.remove('active')
+          return
+        }
+
+        // shutting down previous answer and open a new one
+        liItems.forEach(item => item.classList.remove('active'))
+        parentEl.classList.add('active')
+      } 
+    })
+   
+  </script>
+</body>
+</html>
